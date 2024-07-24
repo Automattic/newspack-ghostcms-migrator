@@ -1,6 +1,6 @@
 <?php
 
-namespace NewspackGhostMigrator;
+namespace NewspackGhostCMSMigrator;
 
 use Newspack\MigrationTools\Command\WpCliCommandInterface;
 use Newspack\MigrationTools\Command\WpCliCommands;

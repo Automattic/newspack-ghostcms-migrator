@@ -1,5 +1,5 @@
 {
-  "name": "automattic/newspack-ghost-migrator",
+  "name": "automattic/newspack-ghostcms-migrator",
   "autoload": {
     "classmap": [
       "src/"
@@ -12,7 +12,7 @@
     }
   ],
   "require": {
-    "automattic/newspack-migration-tools": "dev-add/ghost-cms-migrator"
+    "automattic/newspack-migration-tools": "dev-add/ghostcms-migrator"
   },
   "require-dev": {
     "automattic/vipwpcs": "^3.0",
