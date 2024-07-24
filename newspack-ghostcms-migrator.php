@@ -19,6 +19,7 @@ if ( ! defined( 'WP_CLI' ) || ! WP_CLI ) {
 
 require __DIR__ . '/vendor/autoload.php';
 
-PluginSetup::register_migrators( array() );
-
+PluginSetup::register_migrators([
+	\Newspack\MigrationTools\Command\GhostCMSMigrator::class,
+]);
 

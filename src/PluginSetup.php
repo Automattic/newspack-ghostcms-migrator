@@ -3,7 +3,6 @@
 namespace NewspackGhostCMSMigrator;
 
 use Newspack\MigrationTools\Command\WpCliCommandInterface;
-use Newspack\MigrationTools\Command\WpCliCommands;
 use WP_CLI;
 
 /**
@@ -18,7 +17,7 @@ class PluginSetup {
 	 */
 	public static function register_migrators( $migrator_classes ) {
 
-		foreach ( WpCliCommands::get_classes_with_cli_commands() as $command_class ) {
+		foreach ( $migrator_classes as $command_class ) {
 			$class = $command_class::get_instance();
 			if ( is_a( $class, WpCliCommandInterface::class ) ) {
 				array_map( function ( $command ) {
