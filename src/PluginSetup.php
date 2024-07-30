@@ -1,4 +1,9 @@
 <?php
+/**
+ * Newspack GhostCMS Migrator Plugin Installer.
+ * 
+ * @package NewspackGhostCMSMigrator
+ */
 
 namespace NewspackGhostCMSMigrator;
 
@@ -20,12 +25,13 @@ class PluginSetup {
 		foreach ( $migrator_classes as $command_class ) {
 			$class = $command_class::get_instance();
 			if ( is_a( $class, WpCliCommandInterface::class ) ) {
-				array_map( function ( $command ) {
-					WP_CLI::add_command( ...$command );
-				}, $class->get_cli_commands() );
+				array_map(
+					function ( $command ) {
+						WP_CLI::add_command( ...$command );
+					},
+					$class->get_cli_commands()
+				);
 			}
 		}
-
 	}
-
 }

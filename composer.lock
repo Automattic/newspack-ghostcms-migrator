@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/newspack-migration-tools.git",
-                "reference": "2fb893c0ad19c59f156a522c8cf592941325a46e"
+                "reference": "f3c50ec331cb92bc39f89897f04cbf559b70c74b"
             },
             "require": {
                 "php": ">=8.1"
@@ -55,7 +55,7 @@
                 "GPL-3.0-or-later"
             ],
             "description": "A set of tools to help migration to WordPress.",
-            "time": "2024-07-24T22:31:04+00:00"
+            "time": "2024-07-24T23:21:42+00:00"
         }
     ],
     "packages-dev": [

@@ -7,7 +7,7 @@
  * Author URI:  https://newspack.blog/
  * Version:     1.0
  *
- * @package  Newspack_GhostCMS_Migrator
+ * @package  NewspackGhostCMSMigrator
  */
 
 namespace NewspackGhostCMSMigrator;
@@ -19,7 +19,8 @@ if ( ! defined( 'WP_CLI' ) || ! WP_CLI ) {
 
 require __DIR__ . '/vendor/autoload.php';
 
-PluginSetup::register_migrators([
-	\Newspack\MigrationTools\Command\GhostCMSMigrator::class,
-]);
-
+PluginSetup::register_migrators(
+	[
+		\Newspack\MigrationTools\Command\GhostCMSMigrator::class,
+	]
+);

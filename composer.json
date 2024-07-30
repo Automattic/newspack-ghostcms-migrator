@@ -56,7 +56,7 @@
   "scripts": {
     "release": [
       "composer install --no-dev --optimize-autoloader",
-      "composer archive --format=zip --dir=release --file=newspack-ghost-migrator"
+      "composer archive --format=zip --dir=release --file=newspack-ghostcms-migrator"
     ]
   }
 }
