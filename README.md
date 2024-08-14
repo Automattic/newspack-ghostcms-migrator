@@ -1,7 +1,24 @@
-# newspack-ghostcms-migrator
+#  Todo: 
 
-Todo: 
 - PHPCS
 - php unit tests?
 - remove branch from composer.config: "automattic/newspack-migration-tools": "dev-add/ghostcms-migrator"
   - other composer json clean up?
+
+
+# Newspack GhostCMS Migrator
+
+This WordPress Plugin provides CLI access to the Newspack Migration Tools GhostCMS Migrator.
+
+## How to use this Plugin
+
+1. Upload and activate this plugin's zip file into your WordPress site.
+2. Open your prefered CLI (terminal) and navigate to your WordPress folder.
+3. Run your desired GhostCMS CLI commands as [documented here](https://github.com/Automattic/newspack-migration-tools/docs/GhostCMS.md).
+
+
+## Links
+
+* [GhostCMS](https://ghost.org/)
+* [Newspack Migration Tools GhostCMS Migrator documentation](https://github.com/Automattic/newspack-migration-tools/docs/GhostCMS.md)
+
