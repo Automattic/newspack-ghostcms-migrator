@@ -3,8 +3,11 @@
 - PHPCS
 - php unit tests?
 - remove branch from composer.config: "automattic/newspack-migration-tools": "dev-add/ghostcms-migrator"
+  - set this to a specific migration tools tag/release number?
   - other composer json clean up?
-
+  - rerun composer install and commit the latest composer.lock.
+- create a release zip
+- create a release in Github
 
 # Newspack GhostCMS Migrator
 
