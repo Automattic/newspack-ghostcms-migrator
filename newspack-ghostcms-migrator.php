@@ -22,7 +22,7 @@ require __DIR__ . '/vendor/autoload.php';
 // Add GhostCMSMigrator command(s) from Migration Tools package into WP_CLI commands.
 array_map(
 	function ( $command ) {
-			\WP_CLI::add_command( ...$command );
+		\WP_CLI::add_command( ...$command );
 	},
 	\Newspack\MigrationTools\Command\GhostCMSMigrator::get_instance()->get_cli_commands()
 );
