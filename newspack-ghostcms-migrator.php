@@ -19,8 +19,10 @@ if ( ! defined( 'WP_CLI' ) || ! WP_CLI ) {
 
 require __DIR__ . '/vendor/autoload.php';
 
-PluginSetup::register_migrators(
-	[
-		\Newspack\MigrationTools\Command\GhostCMSMigrator::class,
-	]
+// Add GhostCMSMigrator command(s) from Migration Tools package into WP_CLI commands.
+array_map(
+	function ( $command ) {
+			\WP_CLI::add_command( ...$command );
+	},
+	\Newspack\MigrationTools\Command\GhostCMSMigrator::get_instance()->get_cli_commands()
 );
