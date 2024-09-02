@@ -1,10 +1,5 @@
 {
   "name": "automattic/newspack-ghostcms-migrator",
-  "autoload": {
-    "classmap": [
-      "src/"
-    ]
-  },
   "repositories": [
     {
         "type": "git",
