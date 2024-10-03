@@ -1,11 +1,12 @@
 #  Todo: 
 
 - PHPCS
-- php unit tests?
+- php unit tests? link to migration tools test?
 - remove branch from composer.config: "automattic/newspack-migration-tools": "dev-add/ghostcms-migrator"
   - set this to a specific migration tools tag/release number?
   - other composer json clean up?
   - rerun composer install and commit the latest composer.lock.
+  - does migration tools need to have composer install run itself?
 - create a release zip
 - create a release in Github
 

@@ -6,11 +6,7 @@
  * Author:      Automattic
  * Author URI:  https://newspack.blog/
  * Version:     1.0
- *
- * @package  NewspackGhostCMSMigrator
  */
-
-namespace NewspackGhostCMSMigrator;
 
 // Don't do anything outside WP CLI.
 if ( ! defined( 'WP_CLI' ) || ! WP_CLI ) {
@@ -19,10 +15,12 @@ if ( ! defined( 'WP_CLI' ) || ! WP_CLI ) {
 
 require __DIR__ . '/vendor/autoload.php';
 
+use Newspack\MigrationTools\Command\GhostCMSMigrator;
+
 // Add GhostCMSMigrator command(s) from Migration Tools package into WP_CLI commands.
 array_map(
 	function ( $command ) {
-		\WP_CLI::add_command( ...$command );
+		WP_CLI::add_command( ...$command );
 	},
-	\Newspack\MigrationTools\Command\GhostCMSMigrator::get_instance()->get_cli_commands()
+	GhostCMSMigrator::get_cli_commands()
 );
