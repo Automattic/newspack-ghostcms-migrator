@@ -1,14 +1,18 @@
 #  Todo: 
 
-- PHPCS
-- php unit tests? link to migration tools test?
-- remove branch from composer.config: "automattic/newspack-migration-tools": "dev-add/ghostcms-migrator"
-  - set this to a specific migration tools tag/release number?
-  - other composer json clean up?
-  - rerun composer install and commit the latest composer.lock.
-  - does migration tools need to have composer install run itself?
-- create a release zip
-- create a release in Github
+Once the branch Migration Tools branch is merged ( https://github.com/Automattic/newspack-migration-tools/pull/5 ), then do the following:
+
+- Update this composer.json:
+  - from: "automattic/newspack-migration-tools": "dev-add/ghostcms-migrator"
+  - to:  "automattic/newspack-migration-tools": "dev-trunk" (or maybe a tag/release number?)
+
+- Add composer.lock, package.json, .gitignore, or other build files you see fit into this repo.
+
+- Possibly create a release/tag and a release zip for downloading as an installable plugin.
+
+- Verify that the 2 links below point to the documentation in migration tool.
+
+---- delete this line and everything agove ---
 
 # Newspack GhostCMS Migrator
 
