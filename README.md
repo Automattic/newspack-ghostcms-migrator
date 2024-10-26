@@ -12,6 +12,8 @@ Once the branch Migration Tools branch is merged ( https://github.com/Automattic
 
 - Verify that the 2 links below point to the documentation in migration tool.
 
+- Set this repo to Public.
+
 ---- delete this line and the todos above ---
 
 # Newspack GhostCMS Migrator
