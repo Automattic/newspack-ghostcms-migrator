@@ -10,7 +10,7 @@ Once the branch Migration Tools branch is merged ( https://github.com/Automattic
 
 - Possibly create a release/tag and a release zip for downloading as an installable plugin.
 
-- Verify that the 2 links below point to the documentation in migration tool.
+- Verify that the 2 links below point to the documentation in migration tool after the Migration Tools merge above.
 
 - Set this repo to Public.
 
