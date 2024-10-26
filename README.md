@@ -1,6 +1,6 @@
 #  Todo: 
 
-Once the branch Migration Tools branch is merged ( https://github.com/Automattic/newspack-migration-tools/pull/5 ), then do the following:
+Once the Migration Tools GhostCMS branch is merged ( https://github.com/Automattic/newspack-migration-tools/pull/5 ), then do the following:
 
 - Update this composer.json:
   - from: "automattic/newspack-migration-tools": "dev-add/ghostcms-migrator"
