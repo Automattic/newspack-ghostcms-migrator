@@ -5,7 +5,7 @@ This WordPress Plugin provides CLI access to the Newspack Migration Tools GhostC
 ## How to use this Plugin
 
 1. Upload and activate this plugin's zip file into your WordPress site.
-2. Open your prefered CLI (terminal) and navigate to your WordPress folder.
+2. Open your prefered terminal program and navigate to your WordPress folder.
 3. Run the GhostCMS CLI command as [documented here](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md).
 
 
