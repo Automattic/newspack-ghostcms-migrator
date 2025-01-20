@@ -14,7 +14,7 @@
         "rm -rf vendor",
         "rm -rf release",
         "composer install --no-dev --optimize-autoloader",
-        "composer archive --format=zip --dir=release --file=newspack-migration-tools"
+        "composer archive --format=zip --dir=release --file=newspack-ghostcms-migrator"
     ]
   }
 }
