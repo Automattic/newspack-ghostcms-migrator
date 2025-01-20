@@ -7,6 +7,6 @@
     }
   ],
   "require": {
-    "automattic/newspack-migration-tools": "dev-add/ghostcms-migrator"
+    "automattic/newspack-migration-tools": "dev-trunk"
   }
 }
