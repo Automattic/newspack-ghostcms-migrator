@@ -24,3 +24,7 @@ array_map(
 	},
 	GhostCMSMigrator::get_cli_commands()
 );
+
+// Turn on logging.
+add_filter( 'newspack_migration_tools_enable_file_log', '__return_true' );
+add_filter( 'newspack_migration_tools_enable_cli_log', '__return_true' );
