@@ -8,5 +8,13 @@
   ],
   "require": {
     "automattic/newspack-migration-tools": "dev-trunk"
+  },
+  "scripts": {
+    "build-release": [
+        "rm -rf vendor",
+        "rm -rf release",
+        "composer install --no-dev --optimize-autoloader",
+        "composer archive --format=zip --dir=release --file=newspack-migration-tools"
+    ]
   }
 }
