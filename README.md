@@ -2,16 +2,16 @@
 
 This plugin provides a CLI command to migrate a [Ghost (CMS)](https://ghost.org/) website to WordPress.
 
-## How to Export from Ghost
+## Step 1: Export JSON from Ghost
 
 A JSON file backup/export of the current Ghost website will be needed. 
 
 Options:
 - [Backup a self-hosted site using the Admin](https://ghost.org/docs/faq/manual-backup/#export-content). Choose "Export your content".
 - [Backup a self-hosted site using the Ghost CLI](https://ghost.org/docs/ghost-cli/#ghost-backup). Run `ghost backup`.
-- [Exporting a Ghost Pro site](https://ghost.org/help/exports/). Export the JSON file.
+- [Exporting from a Ghost Pro site](https://ghost.org/help/exports/). See "content" export.
 
-Note: the JSON export could be a very large file. In most cases, the Newspack GhostCMS Migrator should be able to injest the file as-is. But if smaller chunks are needed, please see the Ghost command-line tools to split the JSON file.
+Note: the JSON export file could be very large. In most cases, the Newspack GhostCMS Migrator should be able to injest the file as-is. But if smaller chunks are needed, Ghost's gctools [json-split](https://github.com/TryGhost/gctools?tab=readme-ov-file#json-split) command line utility could be used to create smaller files.
 
 
 ## How to use this Plugin
