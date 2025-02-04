@@ -25,7 +25,27 @@ To run the migrator, you'll need:
 
 - Command-line access to the WordPress website (this could mean SSH for remotely hosted sites).
 - [WP-CLI](https://wp-cli.org/) installed.
+- For remotely hosted sites, FTP/SFTP/SCP or other way to upload the Ghost JSON export to the server. (Depending on your WordPress security settings, you may be able to upload the JSON file into the Media Library, but this is not advised as it will make the JSON file publicly available).
 
+## Step 4: Run the migrator
+
+Before running the migrator, please review the help output to understand the required and option arguments.
+
+Command: `wp help newspack-migration-tools ghostcms-import`
+Required options:
+```
+--default-user-id=<default-user-id>
+  User ID for default "post_author" for wp_insert_post(). Integer.
+--ghost-url=<ghost-url>
+  Public URL of current/live Ghost Website. Scheme with domain: https://www.mywebsite.com
+--json-file=<json-file>
+  Path to Ghost JSON export file.
+```
+Optional:
+```
+  --created-after=<created-after>
+  Datetime cut-off to only import posts AFTER this date. (Must be parseable by strtotime).
+```
 
 1. Open your prefered command-line program and navigate/SSH to your WordPress site's root folder.
 2. Verify the Newspack GhostCMS Migrator is avaiable in WP-CLI be viewing "help" with this command: `wp help newspack-migration-tools ghostcms-import`
