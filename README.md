@@ -9,15 +9,10 @@ A JSON file backup/export of the current Ghost website will be needed.
 Options:
 - [Backup a self-hosted site using the Admin](https://ghost.org/docs/faq/manual-backup/#export-content). Choose "Export your content".
 - [Backup a self-hosted site using the Ghost CLI](https://ghost.org/docs/ghost-cli/#ghost-backup). Run `ghost backup`.
-Ghost export the JSON file from Ghost. 
-Ghost Admin
+- [Exporting a Ghost Pro site](https://ghost.org/help/exports/). Export the JSON file.
 
 Note: the JSON export could be a very large file. In most cases, the Newspack GhostCMS Migrator should be able to injest the file as-is. But if smaller chunks are needed, please see the Ghost command-line tools to split the JSON file.
 
-Information about exporting a full-site JSON backup file from Ghost can be found here.
-
-
-provides CLI access to the Newspack Migration Tools GhostCMS Migrator.
 
 ## How to use this Plugin
 
@@ -30,6 +25,10 @@ provides CLI access to the Newspack Migration Tools GhostCMS Migrator.
 
 * [GhostCMS](https://ghost.org/)
 * [Newspack Migration Tools GhostCMS Migrator documentation](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md)
+
+# Development
+
+This plugin is simply a wrapper for the GhostCMS Migrator in Newspack Migration Tools.
 
 -- cross-post --
 
