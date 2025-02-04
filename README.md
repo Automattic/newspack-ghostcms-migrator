@@ -31,8 +31,9 @@ To run the migrator, you'll need:
 
 Before running the migrator, please review the help output to understand the required and option arguments.
 
-Command: `wp help newspack-migration-tools ghostcms-import`
-Required options:
+Command: `wp help newspack-migration-tools ghostcms-import` 
+
+Required:
 ```
 --default-user-id=<default-user-id>
   User ID for default "post_author" for wp_insert_post(). Integer.
@@ -41,11 +42,20 @@ Required options:
 --json-file=<json-file>
   Path to Ghost JSON export file.
 ```
+
 Optional:
 ```
   --created-after=<created-after>
   Datetime cut-off to only import posts AFTER this date. (Must be parseable by strtotime).
 ```
+
+For testing, you can use these test values:
+```
+--default-user-id=1
+--ghost-url=https://newspack.com
+--json-file=wp-content/plugins/newspack-ghostcms-migrator/vendor/automattic/newspack-migration-tools/tests/fixtures/ghostcms.json
+```
+
 
 1. Open your prefered command-line program and navigate/SSH to your WordPress site's root folder.
 2. Verify the Newspack GhostCMS Migrator is avaiable in WP-CLI be viewing "help" with this command: `wp help newspack-migration-tools ghostcms-import`
