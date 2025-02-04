@@ -84,11 +84,15 @@ The following output logs will be created:
 
 # Errors
 
-If the Newspack Plugin is also active on the WordPress site, and the following error has been encountered:
+`Error: CoAuthorsPlusHelper construct threw exception: CoAuthors Plus is not installed or active. --> src/Logic/GhostCMSHelper.php:500`
 
-```
-Error: CoAuthorsPlusHelper construct threw exception: CoAuthors Plus is not installed or active. --> src/Logic/GhostCMSHelper.php:500
-```
+**Fix 1:**
+
+Verify the free plugin [Co-Authors Plus](https://wordpress.org/plugins/co-authors-plus/) is installed and activated.
+
+**Fix 2:**
+
+If the Newspack Plugin is also active on the WordPress site, and the following error has been encountered:
 
 Please add a config value to the `wp-config.com` file:
 
@@ -97,9 +101,14 @@ Please add a config value to the `wp-config.com` file:
 
 # Development
 
-This plugin is simply a wrapper for the GhostCMS Migrator in Newspack Migration Tools [doc](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md).
+To install this plugin using composer, do the following:
+
+```
+
 
 -- cross-post --
+
+This plugin is simply a wrapper for the GhostCMS Migrator in Newspack Migration Tools [doc](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md).
 
 
 
