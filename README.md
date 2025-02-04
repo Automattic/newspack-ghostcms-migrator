@@ -1,6 +1,6 @@
 # Newspack GhostCMS Migrator
 
-This plugin provides a CLI command to migrate a [Ghost (CMS)](https://ghost.org/) website to WordPress.
+This plugin provides a CLI command to migrate a [Ghost (CMS)](https://ghost.org/) website to WordPress. This migrator will import a Ghost JSON export file into new posts, featured images, categories, and authors.
 
 ## Step 1: Export JSON from Ghost
 
@@ -29,6 +29,8 @@ To run the migrator, you'll need:
 
 ## Step 4: Run the migrator
 
+#### Review help and arguments
+
 Before running the migrator, please review the help output to understand the required and optional arguments.
 
 Help command: `wp help newspack-migration-tools ghostcms-import` 
@@ -51,6 +53,8 @@ Optional arguments:
   Datetime cut-off to only import posts AFTER this date. (Must be parseable by strtotime).
 ```
 
+#### Run a test (if desired)
+
 For testing, you can use these test values:
 ```
 --default-user-id=1
@@ -58,60 +62,39 @@ For testing, you can use these test values:
 --json-file=wp-content/plugins/newspack-ghostcms-migrator/vendor/automattic/newspack-migration-tools/tests/fixtures/ghostcms.json
 ```
 
-**To run a real migration, run this command (be sure to replace your values):**
+#### Run a real migration
 
-`wp newspack-migration-tools ghostcms-import --default-user-id=<default-user-id> --ghost-url=<ghost-url> --json-file=<json-file> [--created-after=<created-after>]`
+Command: `wp newspack-migration-tools ghostcms-import --default-user-id=<default-user-id> --ghost-url=<ghost-url> --json-file=<json-file> [--created-after=<created-after>]`
 
+_Be sure to replace your values._
 
+If the migrator command is stopped mid-migration, it is OK to simply re-start the command. Previously imported content will not be imported again. Log files will automatically be appended to with each run. If the command will not run, please view the `wp-content/debug.log` file and/or the output logs listed below.
 
-## Links
+## Step 5 (optional): Review output logs 
 
-* [GhostCMS](https://ghost.org/)
-* [Newspack Migration Tools GhostCMS Migrator documentation](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md)
+The following output logs will be created and written to.
+
+* `GhostCMSMigrator_cmd_ghostcms_import.log` - This log file will list all content that was imported along with any warning or errors encountered.
+* `GhostCMSMigrator_cmd_ghostcms_import.log-skips.log` - If a post was already imported, it will not be imported again. A list of "skipped" posts will be written to this file.
+
+# Fatal Conflicts:
+
+If the Newspack Plugin is also active on the WordPress site, and the following error has been encountered:
+
+```
+Error: CoAuthorsPlusHelper construct threw exception: CoAuthors Plus is not installed or active. --> src/Logic/GhostCMSHelper.php:500
+```
+
+Please add a config value to the `wp-config.com` file:
+
+- By hand: `define( 'NEWSPACK_ENABLE_CAP_GUEST_AUTHORS', true );`
+- Or by wp-cli: `wp config set NEWSPACK_ENABLE_CAP_GUEST_AUTHORS true --raw --type=constant`
 
 # Development
 
-This plugin is simply a wrapper for the GhostCMS Migrator in Newspack Migration Tools.
+This plugin is simply a wrapper for the GhostCMS Migrator in Newspack Migration Tools [doc](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md).
 
 -- cross-post --
 
-# GhostCMS Migrator
-
-The following CLI migrator can be used to import a Ghost JSON export file into new posts, featured images, categories, and authors.
-
-### Required Plugin
-
-[CoAuthorsPlus](https://wordpress.org/plugins/co-authors-plus/) (free plugin) must be installed and activated.
-
-## Usage:
-
-Command: `wp newspack-migration-tools ghostcms-import`
-
-### Required arguments:
-
-* `--default-user-id=` Default user id for `post_author`.  Ex: 1
-* `--ghost-url=` This is the current LIVE site url. Ex: https://www.my-site.com/
-* `--json-file=` Path to Ghost JSON export file.
-
-### Optional arguments:
-
-* `--created-after=` Cut off date to only import newer posts.  Ex: "2024-01-01 10:50:30"
-
-### Output log files: 
-
-* `GhostCMSMigrator_cmd_ghostcms_import.log` - Be sure to review for warning and error lines.
-* `GhostCMSMigrator_cmd_ghostcms_import.log-skips.log` - Be sure to review for any posts that should have been added but were skipped.
-
-## Fatal Conflicts:
-
-If the Newspack Plugin is also active, and the following error has encountered:
-
-```
-Error: CoAuthorsPlusHelper construct threw exception: CoAuthors Plus is not installed or active. --> /newspack-repos/newspack-custom-content-migrator/dev/newspack-migration-tools/src/Logic/GhostCMSHelper.php:500
-```
-
-Please do [this fix](https://github.com/Automattic/newspack-migration-tools/issues/41):
-
-`wp config set NEWSPACK_ENABLE_CAP_GUEST_AUTHORS true --raw --type=constant`
 
 
