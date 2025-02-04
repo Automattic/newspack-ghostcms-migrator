@@ -25,11 +25,11 @@ To run the migrator, you'll need:
 
 - Command-line access to the WordPress website (this could mean SSH for remotely hosted sites).
 - [WP-CLI](https://wp-cli.org/) installed.
-- For remotely hosted sites, FTP/SFTP/SCP or other way to upload the Ghost JSON export to the server. (Depending on your WordPress security settings, you may be able to upload the JSON file into the Media Library, but this is not advised as it will make the JSON file publicly available).
+- For remotely hosted sites, FTP/SFTP/SCP or other method to upload the Ghost JSON file to the server. (Depending on your WordPress security settings, you may be able to upload the JSON file into the Media Library, but this is not advised as it will make the JSON file publicly available).
 
 ## Step 4: Run the migrator
 
-#### Review help and arguments
+### Review help and arguments
 
 Before running the migrator, please review the help output to understand the required and optional arguments.
 
@@ -53,7 +53,7 @@ Optional arguments:
   Datetime cut-off to only import posts AFTER this date. (Must be parseable by strtotime).
 ```
 
-#### Run a test (if desired)
+### Run a test (if desired)
 
 For testing, you can use these test values:
 ```
@@ -62,22 +62,27 @@ For testing, you can use these test values:
 --json-file=wp-content/plugins/newspack-ghostcms-migrator/vendor/automattic/newspack-migration-tools/tests/fixtures/ghostcms.json
 ```
 
-#### Run a real migration
+### Run a real migration
 
-Command: `wp newspack-migration-tools ghostcms-import --default-user-id=<default-user-id> --ghost-url=<ghost-url> --json-file=<json-file> [--created-after=<created-after>]`
+Command (_be sure to replace your values_):
+```
+wp newspack-migration-tools ghostcms-import --default-user-id=<default-user-id> --ghost-url=<ghost-url> --json-file=<json-file> [--created-after=<created-after>]
+```
 
-_Be sure to replace your values._
+If the migrator command is stopped mid-migration, it is OK to simply re-run the command.
+- Previously imported content will be skipped.
+- Log files will be appended to automatically.
 
-If the migrator command is stopped mid-migration, it is OK to simply re-start the command. Previously imported content will not be imported again. Log files will automatically be appended to with each run. If the command will not run, please view the `wp-content/debug.log` file and/or the output logs listed below.
+If the command will not run, please view the `wp-content/debug.log` file and/or the output logs listed below. Also see _Fatal Conflicts_ below.
 
 ## Step 5 (optional): Review output logs 
 
-The following output logs will be created and written to.
+The following output logs will be created:
 
 * `GhostCMSMigrator_cmd_ghostcms_import.log` - This log file will list all content that was imported along with any warning or errors encountered.
 * `GhostCMSMigrator_cmd_ghostcms_import.log-skips.log` - If a post was already imported, it will not be imported again. A list of "skipped" posts will be written to this file.
 
-# Fatal Conflicts:
+# Fatal Conflicts
 
 If the Newspack Plugin is also active on the WordPress site, and the following error has been encountered:
 
