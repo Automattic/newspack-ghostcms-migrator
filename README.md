@@ -107,10 +107,11 @@ This plugin is simply a wrapper for the GhostCMS Migrator in Newspack Migration 
 
 1) Make changes as needed in Newspack Migration Tools and/or this plugin.
 2) If changes were made in Newspack Migration Tools, make sure they are merged into trunk.
-3) In this repo, run commands: `rm -rf vendor`, `rm composer.lock`, then `composer install` - this will install the latest version of Newspack Migration Tools in the vendor folder.
-4) 
-5) Be sure to git add/commit/push the updated `composer.lock` file.
-
+3) Run command `composer update automattic/newspack-migration-tools` to update the version of Newspack Migration Tools in the `composer.lock` file (and vendor folder).
+4) Run command `composer run-script build-release` to create the release zip (created in the `release/` folder).
+5) Prior to uploading the release zip to GitHub, it is advisable to run a test to make sure everything is working. To do this, 'ln -s' this repo folder into a WordPress site and run the test command `wp newspack-migration-tools ghostcms-import --default-user-id=1 --ghost-url=https://newspack.com --json-file=wp-content/plugins/newspack-ghostcms-migrator/vendor/automattic/newspack-migration-tools/tests/fixtures/ghostcms.json`
+6) If the command runs as expected, proceed to uploading the zip as a new release in GitHub.
+7) Be sure also git add/commit/push the updated `composer.lock` file.
 
 -- cross-post to NMT --
 
