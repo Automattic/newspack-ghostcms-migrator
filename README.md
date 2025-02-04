@@ -13,12 +13,24 @@ Options:
 
 Note: the JSON export file could be very large. In most cases, the Newspack GhostCMS Migrator should be able to injest the file as-is. But if smaller chunks are needed, Ghost's gctools [json-split](https://github.com/TryGhost/gctools?tab=readme-ov-file#json-split) command line utility could be used to create smaller files.
 
+## Step 2: Install this plugin
 
-## How to use this Plugin
+1. Download the [latest release](https://github.com/Automattic/newspack-ghostcms-migrator/releases) zip file `newspack-ghostcms-migrator.zip`.
+2. Upload and activate this plugin on your WordPress site.
+3. An additional (free) plugin [Co-Authors-Plus](https://wordpress.org/plugins/co-authors-plus/) must also be installed and activated.
 
-1. Upload and activate this plugin's zip file into your WordPress site.
-2. Open your prefered terminal program and navigate to your WordPress folder.
-3. Run the GhostCMS CLI command as [documented here](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md).
+## Step 3: Verify requirements
+
+To run the migrator, you'll need:
+
+- Command-line access to the WordPress website (this could mean SSH for remotely hosted sites).
+- [WP-CLI](https://wp-cli.org/) installed.
+
+
+1. Open your prefered command-line program and navigate/SSH to your WordPress site's root folder.
+2. Verify the Newspack GhostCMS Migrator is avaiable in WP-CLI be viewing "help" with this command: `wp help newspack-migration-tools ghostcms-import`
+3.   
+4. Run the GhostCMS CLI command as [documented here](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md).
 
 
 ## Links
