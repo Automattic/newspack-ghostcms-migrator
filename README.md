@@ -73,7 +73,7 @@ If the migrator command is stopped mid-migration, it is OK to simply re-run the 
 - Previously imported content will be skipped.
 - Log files will be appended to automatically.
 
-If the command will not run, please view the `wp-content/debug.log` file and/or the output logs listed below. Also see _Fatal Conflicts_ below.
+If the command will not run, please view the `wp-content/debug.log` file and/or the output logs listed below. Also see _Errors_ below.
 
 ## Step 5 (optional): Review output logs 
 
@@ -82,7 +82,7 @@ The following output logs will be created:
 * `GhostCMSMigrator_cmd_ghostcms_import.log` - This log file will list all content that was imported along with any warning or errors encountered.
 * `GhostCMSMigrator_cmd_ghostcms_import.log-skips.log` - If a post was already imported, it will not be imported again. A list of "skipped" posts will be written to this file.
 
-# Fatal Conflicts
+# Errors
 
 If the Newspack Plugin is also active on the WordPress site, and the following error has been encountered:
 
