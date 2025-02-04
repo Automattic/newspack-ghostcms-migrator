@@ -58,7 +58,7 @@ For testing, you can use these test values:
 --json-file=wp-content/plugins/newspack-ghostcms-migrator/vendor/automattic/newspack-migration-tools/tests/fixtures/ghostcms.json
 ```
 
-To run a real migration, run this command (be sure to replace your values):
+**To run a real migration, run this command (be sure to replace your values):**
 
 `wp newspack-migration-tools ghostcms-import --default-user-id=<default-user-id> --ghost-url=<ghost-url> --json-file=<json-file> [--created-after=<created-after>]`
 
