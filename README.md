@@ -133,7 +133,7 @@ This plugin is simply a wrapper for the GhostCMS Migrator in Newspack Migration 
 6) If the command runs as expected, proceed to uploading the zip as a new release in GitHub.
 7) Be sure also git add/commit/push the updated `composer.lock` file.
 
--- cross-post to NMT --
+-- cross-post to NMT doc --
 
 
 
