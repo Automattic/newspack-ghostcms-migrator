@@ -4,13 +4,18 @@ This plugin provides a CLI command to migrate a [Ghost (CMS)](https://ghost.org/
 
 ## Features
 
-### Posts
+### Posts and Content
 
-Migrates public, published posts that contain body content and a title. Already imported posts will be skipped, along with posts that have a matching title on the same date or a slug match. Optional migration argument allows migrating only posts after a given date.
+Migrates public, published posts that contain body content and a title. Already imported posts will be skipped, along with posts that have a matching title on the same date or a slug match. Optional migration argument allows migrating only posts after a given date. Excerpts are migrated.
+
+### Images
+
+Featured images are fetched from the current Ghost website.  Alt and captions are added too.
 
 ### Authors
 
-asdfasdf
+Post authors are imported.  Authors must have a visibility of public.  If the imported author's user_login matches an existing wordpress user with role ('Administrator', 'Editor', 'Author', 'Contributor' ) then wp user will be used. Otherwise a Co-Authors Plus Guest Author will be created.
+
 
 
 
