@@ -91,7 +91,7 @@ The following output logs will be created:
 * `GhostCMSMigrator_cmd_ghostcms_import.log` - This log file will list all content that was imported along with any warning or errors encountered.
 * `GhostCMSMigrator_cmd_ghostcms_import.log-skips.log` - If a post was already imported, it will not be imported again. A list of "skipped" posts will be written to this file.
 
-# Errors
+## Errors
 
 `Error: CoAuthorsPlusHelper construct threw exception: CoAuthors Plus is not installed or active. --> src/Logic/GhostCMSHelper.php:500`
 
@@ -108,7 +108,7 @@ Please add a config value to the `wp-config.com` file:
 - By hand: `define( 'NEWSPACK_ENABLE_CAP_GUEST_AUTHORS', true );`
 - Or by wp-cli: `wp config set NEWSPACK_ENABLE_CAP_GUEST_AUTHORS true --raw --type=constant`
 
-# Development
+## Development
 
 This plugin is simply a wrapper for the GhostCMS Migrator in Newspack Migration Tools [doc](https://github.com/Automattic/newspack-migration-tools/blob/trunk/docs/GhostCMS.md). Please make changes there, then create a release here.
 
