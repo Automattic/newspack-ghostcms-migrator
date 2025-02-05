@@ -1,27 +1,24 @@
 # Newspack GhostCMS Migrator
 
-This plugin provides a CLI command to migrate a [Ghost (CMS)](https://ghost.org/) website to WordPress. This migrator will import a Ghost JSON export file into new posts, featured images, categories, and authors.
+This plugin provides a CLI command to migrate a [Ghost (CMS)](https://ghost.org/) website to WordPress. This migrator will import a Ghost JSON export file into new posts, featured images, authors, and categories.
 
 ## Features
 
 ### Posts and Content
 
-Migrates public, published posts that contain body content and a title. Already imported posts will be skipped, along with posts that have a matching title on the same date or a slug match. Optional migration argument allows migrating only posts after a given date. Excerpts are migrated.
+Public, published posts that contain body content and a title will be migrated. Excerpts are imported too. Already imported posts will be skipped, along with posts that have a matching title on the same date or a matching slug. An optional migration argument allow migrating only posts after a given date. 
 
 ### Images
 
-Featured images are fetched from the current Ghost website.  Alt and captions are added too.
+Featured images are fetched from the current Ghost website. Alt and captions are added too.
 
 ### Authors
 
-Post authors are imported.  Authors must have a visibility of public.  If the imported author's user_login matches an existing wordpress user with role ('Administrator', 'Editor', 'Author', 'Contributor' ) then wp user will be used. Otherwise a Co-Authors Plus Guest Author will be created.
+Post authors are imported. Authors must have a visibility of public. If the imported author's user login matches an existing WordPress user with role ('Administrator', 'Editor', 'Author', or 'Contributor') then the WP User will be used, otherwise a Co-Authors Plus Guest Author will be created.
 
 ### Categories and Tags
 
 Ghost tags will be imported as WordPress categories.
-
-
-
 
 ## How to Migrate
 
