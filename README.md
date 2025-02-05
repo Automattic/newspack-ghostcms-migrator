@@ -16,7 +16,9 @@ Featured images are fetched from the current Ghost website.  Alt and captions ar
 
 Post authors are imported.  Authors must have a visibility of public.  If the imported author's user_login matches an existing wordpress user with role ('Administrator', 'Editor', 'Author', 'Contributor' ) then wp user will be used. Otherwise a Co-Authors Plus Guest Author will be created.
 
+### Categories and Tags
 
+Ghost tags will be imported as WordPress categories.
 
 
 
