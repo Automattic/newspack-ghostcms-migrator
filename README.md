@@ -2,7 +2,16 @@
 
 This plugin provides a CLI command to migrate a [Ghost (CMS)](https://ghost.org/) website to WordPress. This migrator will import a Ghost JSON export file into new posts, featured images, categories, and authors.
 
-## Step 1: Export JSON from Ghost
+## Features
+
+### Authors
+
+asdfasdf
+
+
+## How to Migrate
+
+### Step 1: Export JSON from Ghost
 
 A JSON file backup/export of the current Ghost website is needed. 
 
@@ -13,13 +22,13 @@ Options:
 
 Note: the JSON export file could be very large. In most cases, the Newspack GhostCMS Migrator should be able to injest the file as-is. But if smaller chunks are needed, Ghost's gctools [json-split](https://github.com/TryGhost/gctools?tab=readme-ov-file#json-split) command line utility could be used to create smaller files.
 
-## Step 2: Install this plugin
+### Step 2: Install this plugin
 
 1. Download the [latest release](https://github.com/Automattic/newspack-ghostcms-migrator/releases) zip file `newspack-ghostcms-migrator.zip`.
 2. Upload and activate this plugin on your WordPress site.
 3. An additional (free) plugin [Co-Authors Plus](https://wordpress.org/plugins/co-authors-plus/) must also be installed and activated.
 
-## Step 3: Verify requirements
+### Step 3: Verify requirements
 
 To run the migrator, you'll need:
 
@@ -27,9 +36,9 @@ To run the migrator, you'll need:
 - [WP-CLI](https://wp-cli.org/) installed.
 - For remotely hosted sites, FTP/SFTP/SCP or other method to upload the Ghost JSON file to the server. (Depending on your WordPress security settings, you may be able to upload the JSON file into the Media Library, but this is not advised as it will make the JSON file publicly available).
 
-## Step 4: Run the migrator
+### Step 4: Run the migrator
 
-### Review help and arguments
+#### Review help and arguments
 
 Before running the migrator, please review the help output to understand the required and optional arguments.
 
@@ -53,7 +62,7 @@ Optional arguments:
   Datetime cut-off to only import posts AFTER this date. (Must be parseable by strtotime).
 ```
 
-### Run a test (if desired)
+#### Run a test (if desired)
 
 For testing, you can use these test values:
 ```
@@ -62,7 +71,7 @@ For testing, you can use these test values:
 --json-file=wp-content/plugins/newspack-ghostcms-migrator/vendor/automattic/newspack-migration-tools/tests/fixtures/ghostcms.json
 ```
 
-### Run a real migration
+#### Run a real migration
 
 Command (_be sure to replace your values_):
 ```
@@ -75,7 +84,7 @@ If the migrator command is stopped mid-migration, it is OK to simply re-run the 
 
 If the command will not run, please view the `wp-content/debug.log` file and/or the output logs listed below. Also see _Errors_ below.
 
-## Step 5 (optional): Review output logs 
+### Step 5 (optional): Review output logs 
 
 The following output logs will be created:
 
