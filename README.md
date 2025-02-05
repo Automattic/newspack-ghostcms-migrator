@@ -4,9 +4,16 @@ This plugin provides a CLI command to migrate a [Ghost (CMS)](https://ghost.org/
 
 ## Features
 
+### Posts
+
+Migrates public, publised posts that contain body content and a title. Already imported posts will be skipped, along with posts with matching title and date or slug match. Optional migration argument allows migrating only posts after a given date.
+
 ### Authors
 
 asdfasdf
+
+
+
 
 
 ## How to Migrate
